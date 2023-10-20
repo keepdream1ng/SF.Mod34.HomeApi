@@ -1,4 +1,6 @@
 using SF.Mod34.HomeApi.Configuration;
+using AutoMapper;
+using System.Reflection;
 
 namespace SF.Mod34.HomeApi;
 
@@ -22,6 +24,9 @@ public class Program
 		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 		builder.Services.AddEndpointsApiExplorer();
 		builder.Services.AddSwaggerGen();
+
+		var assembly = Assembly.GetAssembly(typeof(MappingProfile));
+		builder.Services.AddAutoMapper(assembly);
 
 		var app = builder.Build();
 
