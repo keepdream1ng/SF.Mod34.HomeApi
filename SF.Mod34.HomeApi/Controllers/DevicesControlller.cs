@@ -40,8 +40,12 @@ public class DevicesController : ControllerBase
 	public IActionResult Add(
 		[FromBody] // Атрибут, указывающий, откуда брать значение объекта
 		AddDeviceRequest request // Объект запроса
-	)
-	{
+	){
+		if (request.CurrentVolts < 120)
+		{
+			ModelState.AddModelError("currentVolts", "Devices with voltage less then 120V are not supported");
+			return BadRequest(ModelState);
+		}
 		return StatusCode(200, $"Устройство {request.Name} добавлено!");
 	}
 }

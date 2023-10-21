@@ -12,7 +12,6 @@ public class AddDeviceRequest
 	[Required]
 	public string SerialNumber { get; set; }
 	[Required]
-	[Range(120, 220, ErrorMessage = "Electric system suppors voltage from {1} to {2} volts")]
 	public int CurrentVolts { get; set; }
 	[Required]
 	public bool GasUsage { get; set; }
