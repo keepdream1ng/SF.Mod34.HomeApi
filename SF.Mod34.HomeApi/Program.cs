@@ -1,6 +1,9 @@
 using SF.Mod34.HomeApi.Configuration;
 using AutoMapper;
 using System.Reflection;
+using FluentValidation.AspNetCore;
+using SF.Mod34.HomeApi.Contracts.Validators.Devices;
+using FluentValidation;
 
 namespace SF.Mod34.HomeApi;
 
@@ -19,6 +22,9 @@ public class Program
 
 		// Add services to the container.
 		builder.Services.Configure<HomeOptions>(_configuration);
+
+		builder.Services.AddFluentValidationAutoValidation();
+		builder.Services.AddValidatorsFromAssemblyContaining<AddDeviceRequestValidator>();
 
 		builder.Services.AddControllers();
 		// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
