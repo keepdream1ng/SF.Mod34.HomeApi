@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using SF.Mod34.HomeApi.Contracts;
 using SF.Mod34.HomeApi.Configuration;
+using SF.Mod34.HomeApi.Contracts.Models.Home;
 
 namespace SF.Mod34.HomeApi;
 

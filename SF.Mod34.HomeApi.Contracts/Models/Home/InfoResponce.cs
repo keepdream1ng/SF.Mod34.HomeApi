@@ -1,4 +1,4 @@
-﻿namespace SF.Mod34.HomeApi.Contracts;
+﻿namespace SF.Mod34.HomeApi.Contracts.Models.Home;
 
 /// <summary>
 /// Информация о вашем доме (модель ответа)

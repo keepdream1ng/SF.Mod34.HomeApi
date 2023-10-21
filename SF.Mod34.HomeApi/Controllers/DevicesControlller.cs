@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SF.Mod34.HomeApi.Configuration;
-using SF.Mod34.HomeApi.Contracts;
+using SF.Mod34.HomeApi.Contracts.Models.Devices;
 
 namespace SF.Mod34.HomeApi.Controllers;
 

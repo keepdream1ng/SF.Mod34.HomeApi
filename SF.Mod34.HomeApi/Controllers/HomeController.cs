@@ -2,8 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using SF.Mod34.HomeApi.Configuration;
-using SF.Mod34.HomeApi.Contracts;
-using System.Text;
+using SF.Mod34.HomeApi.Contracts.Models.Home;
 
 namespace SF.Mod34.HomeApi.Controllers;
 

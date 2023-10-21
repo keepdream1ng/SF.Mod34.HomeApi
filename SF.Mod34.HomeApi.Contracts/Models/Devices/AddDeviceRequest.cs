@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace SF.Mod34.HomeApi.Contracts;
+namespace SF.Mod34.HomeApi.Contracts.Models.Devices;
 public class AddDeviceRequest
 {
 	[Required]
