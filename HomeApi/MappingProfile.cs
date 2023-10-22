@@ -30,6 +30,7 @@ namespace HomeApi
             CreateMap<AddRoomRequest, Room>();
             CreateMap<Device, DeviceView>();
             CreateMap<UpdateRoomRequest, UpdateRoomQuery>();
+            CreateMap<Room, RoomView>();
         }
     }
 }

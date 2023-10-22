@@ -18,6 +18,11 @@ namespace HomeApi.Data.Repos
         {
             _context = context;
         }
+
+        public async Task<Room[]> GetRooms()
+        {
+            return await _context.Rooms.ToArrayAsync();
+        }
         
         /// <summary>
         ///  Найти комнату по имени
@@ -26,6 +31,10 @@ namespace HomeApi.Data.Repos
         {
             return await _context.Rooms.Where(r => r.Name == name).FirstOrDefaultAsync();
         }
+
+        /// <summary>
+        /// Найти комнату по ID
+        /// </summary>
         public async Task<Room> GetRoomById(Guid id)
         {
             return await _context.Rooms.Where(r => r.Id == id).FirstOrDefaultAsync();
