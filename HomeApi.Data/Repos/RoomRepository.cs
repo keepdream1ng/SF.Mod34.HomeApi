@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using System.Threading.Tasks;
 using HomeApi.Data.Models;
 using HomeApi.Data.Queries;
@@ -24,6 +25,10 @@ namespace HomeApi.Data.Repos
         public async Task<Room> GetRoomByName(string name)
         {
             return await _context.Rooms.Where(r => r.Name == name).FirstOrDefaultAsync();
+        }
+        public async Task<Room> GetRoomById(Guid id)
+        {
+            return await _context.Rooms.Where(r => r.Id == id).FirstOrDefaultAsync();
         }
         
         /// <summary>
@@ -52,9 +57,9 @@ namespace HomeApi.Data.Repos
             {
                 room.Voltage = (int)query.Voltage;
             }
-            if (query.Area != null)
+            if (query.GasConnected != null)
             {
-                room.Area = (int)query.Area;
+                room.GasConnected = (bool)query.GasConnected;
             }
             // Добавляем в базу 
             var entry = _context.Entry(room);

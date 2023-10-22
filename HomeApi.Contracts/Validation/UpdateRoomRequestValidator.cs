@@ -12,6 +12,7 @@ namespace HomeApi.Contracts.Validation
 	{
         public UpdateRoomRequestValidator()
         {
+            // If property is null it will not be updated.
             RuleFor(r => r.Name).Must(BeSupported)
                 .WithMessage($"Please choose one of the following locations: {string.Join(", ", Values.ValidRooms)}");
         }

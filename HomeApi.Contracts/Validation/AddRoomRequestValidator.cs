@@ -16,7 +16,7 @@ namespace HomeApi.Contracts.Validation
                 .Must(BeSupported)
                 .WithMessage($"Please choose one of the following locations: {string.Join(", ", Values.ValidRooms)}");
             RuleFor(x => x.Voltage).NotEmpty();
-            RuleFor(x => x.GasConnected).NotEmpty();
+            //RuleFor(x => x.GasConnected).NotEmpty();
         }
 
         private bool BeSupported(string location)
