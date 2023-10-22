@@ -54,6 +54,7 @@ namespace HomeApi.Data.Repos
 
         public async Task UpdateRoom(Room room, UpdateRoomQuery query)
         {
+            // Its kinda long, but still shorter than using reflection and will work faster.
             if (query.Name != null)
             {
                 room.Name = query.Name;
